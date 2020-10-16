@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="LiR-SS-nWJ">
             <objects>
-                <viewController id="tek-ke-bKX" sceneMemberID="viewController">
+                <viewController id="tek-ke-bKX" customClass="WelcomeViewController" customModule="Tweet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WHs-rV-ITw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
         <!--Sign up-->
         <scene sceneID="xrR-2F-SdV">
             <objects>
-                <viewController id="biT-08-3oq" sceneMemberID="viewController">
+                <viewController id="biT-08-3oq" customClass="RegisterViewController" customModule="Tweet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Hp-kg-OAi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
         <!--Sign In-->
         <scene sceneID="jBr-dr-6Cl">
             <objects>
-                <viewController id="aPC-wk-yNM" sceneMemberID="viewController">
+                <viewController id="aPC-wk-yNM" customClass="LoginViewController" customModule="Tweet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXE-1k-HK7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
