@@ -7,24 +7,60 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class RegisterViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    // MARK: - IBActions
+    
+    @IBAction func registerButtonAction() {
+        
+        performRegister()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
     }
-    */
-
+    
+    // MARK: - Private Methods
+    
+    private func setupUI() {
+        
+        registerButton.layer.cornerRadius = 25
+    }
+    
+    private func performRegister() {
+        
+        guard let email = emailTextField.text, !email.isEmpty else {
+            
+            NotificationBanner(title: "Error", subtitle: "Enter a valid email", style: BannerStyle.warning).show()
+            
+            return
+        }
+        
+        guard let name = nameTextField.text, !name.isEmpty else {
+            
+            NotificationBanner(title: "Error", subtitle: "Enter a valid name", style: BannerStyle.warning).show()
+            
+            return
+        }
+        
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            
+            NotificationBanner(title: "Error", subtitle: "Invalid password", style: BannerStyle.warning).show()
+            
+            return
+        }
+        
+        
+    }
 }

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="People" translatesAutoresizingMaskIntoConstraints="NO" id="Rz7-Gk-LiJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kat-Gd-aNh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -89,6 +89,9 @@
                         <viewLayoutGuide key="safeArea" id="mfF-sR-CV0"/>
                     </view>
                     <navigationItem key="navigationItem" id="lQz-jq-fAL"/>
+                    <connections>
+                        <outlet property="loginButton" destination="gif-lC-7WR" id="pDe-lv-Kr8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Es-lF-Jgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f6v-iB-aTV">
-                                <rect key="frame" x="20" y="160" width="374" height="166"/>
+                                <rect key="frame" x="20" y="160" width="374" height="189"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etV-MS-hIF">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -121,12 +124,18 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKk-tr-ND5">
-                                        <rect key="frame" x="0.0" y="132" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="132" width="374" height="57"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="6LD-nd-zgR"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="Sign in">
+                                        <state key="normal" title="Sign up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerButtonAction" destination="biT-08-3oq" eventType="touchUpInside" id="PGX-S3-V58"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -149,6 +158,12 @@
                         <viewLayoutGuide key="safeArea" id="GeV-ct-yeW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign up" id="bar-Eu-tJL"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="etV-MS-hIF" id="ixA-uG-yyl"/>
+                        <outlet property="nameTextField" destination="ZPd-k0-Ubz" id="qit-gX-Dlp"/>
+                        <outlet property="passwordTextField" destination="TA4-1l-Yrz" id="B7l-9c-XRK"/>
+                        <outlet property="registerButton" destination="tKk-tr-ND5" id="UCV-d0-7w2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHp-dS-7Lh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-Fh-s8G">
-                                <rect key="frame" x="20" y="160" width="374" height="122"/>
+                                <rect key="frame" x="20" y="160" width="374" height="145"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96y-rL-CZH">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -176,12 +191,18 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaC-nI-P6Z">
-                                        <rect key="frame" x="0.0" y="88" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="88" width="374" height="57"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="1Oo-Bg-mPF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonAction" destination="aPC-wk-yNM" eventType="touchUpInside" id="eWY-du-zzS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -204,6 +225,11 @@
                         <viewLayoutGuide key="safeArea" id="2Eg-FP-EB5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="VxE-9m-BNv"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="96y-rL-CZH" id="xkg-DF-iAa"/>
+                        <outlet property="loginButton" destination="eaC-nI-P6Z" id="yEc-pP-74W"/>
+                        <outlet property="passwordTextField" destination="0TI-h0-SNJ" id="W5p-gx-pmy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oJ-xs-Qki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
