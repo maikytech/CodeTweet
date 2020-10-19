@@ -12,16 +12,15 @@ import NotificationBannerSwift
 class RegisterViewController: UIViewController {
     
     // MARK: - Outlets
-    
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     // MARK: - IBActions
-    
     @IBAction func registerButtonAction() {
         
+        view.endEditing(true)
         performRegister()
     }
     
@@ -32,7 +31,6 @@ class RegisterViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    
     private func setupUI() {
         
         registerButton.layer.cornerRadius = 25
@@ -61,6 +59,6 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        
+        performSegue(withIdentifier: "showHome", sender: nil)
     }
 }

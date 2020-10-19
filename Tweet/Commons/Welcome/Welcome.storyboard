@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="People" translatesAutoresizingMaskIntoConstraints="NO" id="Rz7-Gk-LiJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kat-Gd-aNh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -52,7 +52,7 @@
                                             <segue destination="biT-08-3oq" kind="show" id="V3T-NV-y01"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The largest community of iOS developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXm-JT-iXi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The better community of iOS developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXm-JT-iXi">
                                         <rect key="frame" x="50" y="402" width="314" height="45.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,11 +163,12 @@
                         <outlet property="nameTextField" destination="ZPd-k0-Ubz" id="qit-gX-Dlp"/>
                         <outlet property="passwordTextField" destination="TA4-1l-Yrz" id="B7l-9c-XRK"/>
                         <outlet property="registerButton" destination="tKk-tr-ND5" id="UCV-d0-7w2"/>
+                        <segue destination="Wbt-GV-37p" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="jb1-0K-7eD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHp-dS-7Lh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.7101449275362" y="799.55357142857144"/>
+            <point key="canvasLocation" x="1059" y="621"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="jBr-dr-6Cl">
@@ -229,11 +230,20 @@
                         <outlet property="emailTextField" destination="96y-rL-CZH" id="xkg-DF-iAa"/>
                         <outlet property="loginButton" destination="eaC-nI-P6Z" id="yEc-pP-74W"/>
                         <outlet property="passwordTextField" destination="0TI-h0-SNJ" id="W5p-gx-pmy"/>
+                        <segue destination="Wbt-GV-37p" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="vyE-k0-V5j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oJ-xs-Qki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028.985507246377" y="-56.25"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="6Iy-22-J2c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="Wbt-GV-37p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWu-LF-EpC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="212"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fVX-Hs-aka">
@@ -258,4 +268,7 @@
         <image name="City" width="351.5" height="123"/>
         <image name="People" width="640" height="425"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jb1-0K-7eD"/>
+    </inferredMetricsTieBreakers>
 </document>

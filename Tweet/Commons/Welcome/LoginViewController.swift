@@ -18,10 +18,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
 
     // MARK: - IBActions
-    
     @IBAction func loginButtonAction() {
         
+        view.endEditing(true)
         performLogin()
+        
     }
     
     override func viewDidLoad() {
@@ -31,7 +32,6 @@ class LoginViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    
     private func setupUI() {
         
         loginButton.layer.cornerRadius = 25
@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         }
         
         // Sign in configuration
+        performSegue(withIdentifier: "showHome", sender: nil)
         
     }
 
