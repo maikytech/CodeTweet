@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  Tweet
 //
 //  Created by Maiqui Cedeño on 16/10/20.
@@ -9,20 +9,20 @@
 import UIKit
 import NotificationBannerSwift
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     // MARK: - Outlets
-    
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
     // MARK: - IBActions
-    @IBAction func loginButtonAction() {
+    @IBAction func registerButtonAction() {
         
+        //Hide the keyboard
         view.endEditing(true)
-        performLogin()
-        
+        performRegister()
     }
     
     override func viewDidLoad() {
@@ -30,14 +30,14 @@ class LoginViewController: UIViewController {
         
         setupUI()
     }
-
+    
     // MARK: - Private Methods
     private func setupUI() {
         
-        loginButton.layer.cornerRadius = 25
+        registerButton.layer.cornerRadius = 25
     }
     
-    private func performLogin() {
+    private func performRegister() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
             
@@ -46,16 +46,20 @@ class LoginViewController: UIViewController {
             return
         }
         
-        guard let password = passwordTextField.text, !password.isEmpty else {
+        guard let name = nameTextField.text, !name.isEmpty else {
             
-            NotificationBanner(title: "Error", subtitle: "Invalid pasword", style: BannerStyle.warning).show()
+            NotificationBanner(title: "Error", subtitle: "Enter a valid name", style: BannerStyle.warning).show()
             
             return
         }
         
-        // Sign in configuration
-        performSegue(withIdentifier: "showHome", sender: nil)
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            
+            NotificationBanner(title: "Error", subtitle: "Invalid password", style: BannerStyle.warning).show()
+            
+            return
+        }
         
+        performSegue(withIdentifier: "showHome", sender: nil)
     }
-
 }

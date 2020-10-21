@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="People" translatesAutoresizingMaskIntoConstraints="NO" id="Rz7-Gk-LiJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kat-Gd-aNh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>

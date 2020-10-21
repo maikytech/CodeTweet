@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  Tweet
 //
 //  Created by Maiqui Cedeño on 16/10/20.
@@ -9,19 +9,21 @@
 import UIKit
 import NotificationBannerSwift
 
-class RegisterViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+
     // MARK: - IBActions
-    @IBAction func registerButtonAction() {
+    @IBAction func loginButtonAction() {
         
+        //Hide the keyboard
         view.endEditing(true)
-        performRegister()
+        performLogin()
+        
     }
     
     override func viewDidLoad() {
@@ -29,14 +31,14 @@ class RegisterViewController: UIViewController {
         
         setupUI()
     }
-    
+
     // MARK: - Private Methods
     private func setupUI() {
         
-        registerButton.layer.cornerRadius = 25
+        loginButton.layer.cornerRadius = 25
     }
     
-    private func performRegister() {
+    private func performLogin() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
             
@@ -45,20 +47,16 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        guard let name = nameTextField.text, !name.isEmpty else {
-            
-            NotificationBanner(title: "Error", subtitle: "Enter a valid name", style: BannerStyle.warning).show()
-            
-            return
-        }
-        
         guard let password = passwordTextField.text, !password.isEmpty else {
             
-            NotificationBanner(title: "Error", subtitle: "Invalid password", style: BannerStyle.warning).show()
+            NotificationBanner(title: "Error", subtitle: "Invalid pasword", style: BannerStyle.warning).show()
             
             return
         }
         
+        // Sign in configuration
         performSegue(withIdentifier: "showHome", sender: nil)
+        
     }
+
 }
