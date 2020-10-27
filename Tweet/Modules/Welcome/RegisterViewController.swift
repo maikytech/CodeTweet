@@ -8,6 +8,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
     
@@ -46,7 +48,7 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        guard let name = nameTextField.text, !name.isEmpty else {
+        guard let names = nameTextField.text, !names.isEmpty else {
             
             NotificationBanner(title: "Error", subtitle: "Enter a valid name", style: BannerStyle.warning).show()
             
@@ -60,6 +62,32 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        performSegue(withIdentifier: "showHome", sender: nil)
+        //Do the request
+        let request = RegisterRequest(email: email, password: password, names: names)
+        
+        //Starts loading
+        SVProgressHUD.show()
+        
+        //Call the network library
+        SN.post(endpoint: EndPoints.register, model: request) { (response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+            
+            //Stop loading
+            SVProgressHUD.dismiss()
+            
+            switch response {
+                
+            case .success(let user):
+                self.performSegue(withIdentifier: "showHome", sender: nil)
+                
+            case .error(let error):
+                NotificationBanner(title: "Error",
+                                   subtitle: error.localizedDescription,
+                                   style: BannerStyle.danger).show()
+            case .errorResult(let entity):
+                NotificationBanner(title: "Warning",
+                                   subtitle: entity.error,
+                                   style: BannerStyle.warning).show()
+            }
+        }
     }
 }

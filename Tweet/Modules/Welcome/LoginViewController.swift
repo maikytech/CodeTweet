@@ -68,24 +68,23 @@ class LoginViewController: UIViewController {
         //Call the network library
         SN.post(endpoint: EndPoints.login, model: request) { (response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
             
+            //Stop loading
             SVProgressHUD.dismiss()
             
             switch response {
                 
             case .success(let user):
-                
-                NotificationBanner(title: "Success", subtitle: "Welcome \(user.user.names)", style: BannerStyle.success).show()
-                
-                print("Sucess Login")
+                self.performSegue(withIdentifier: "showHome", sender: nil)
                 
             case .error(let error):
-                return
-                //All bad
+                NotificationBanner(title: "Error",
+                                   subtitle: error.localizedDescription,
+                                   style: BannerStyle.danger).show()
                 
             case .errorResult(let entity):
-                 //error manable
-                
-                return
+                NotificationBanner(title: "Warning",
+                                   subtitle: entity.error,
+                                   style: BannerStyle.warning).show()
             }
         }
     }
