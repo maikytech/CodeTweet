@@ -51,14 +51,12 @@ class RegisterViewController: UIViewController {
         guard let names = nameTextField.text, !names.isEmpty else {
             
             NotificationBanner(title: "Error", subtitle: "Enter a valid name", style: BannerStyle.warning).show()
-            
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
             
             NotificationBanner(title: "Error", subtitle: "Invalid password", style: BannerStyle.warning).show()
-            
             return
         }
         
