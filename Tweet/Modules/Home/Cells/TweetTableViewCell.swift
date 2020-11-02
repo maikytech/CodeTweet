@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TweetTableViewCell: UITableViewCell {
     
@@ -32,8 +33,18 @@ class TweetTableViewCell: UITableViewCell {
     
     func setupCellWith(post: Post) {
         
+        nameLabel.text = post.author.names
+        nickNameLabel.text = post.author.nickname
+        messageLabel.text = post.text
         
-        
+        if post.hasImage {
+            
+            //Image Configuration
+            tweetImageView.kf.setImage(with: URL(string: post.imageUrl))
+            
+        }else {
+            
+            tweetImageView.isHidden = true
+        }
     }
-    
 }

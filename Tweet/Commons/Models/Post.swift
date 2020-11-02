@@ -21,3 +21,4 @@ struct Post: Codable {
     let hasLocation: Bool
     let createdAt: String
 }
+
