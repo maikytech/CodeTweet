@@ -24,8 +24,14 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        getPost()
+        
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        getPost()
     }
     
     //MARK: - Private Methods

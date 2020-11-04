@@ -69,7 +69,7 @@ class RegisterViewController: UIViewController {
         //Call the network library
         SN.post(endpoint: EndPoints.register, model: request) { (response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
             
-            //Stop loading
+            //Dismiss load indicator
             SVProgressHUD.dismiss()
             
             switch response {
@@ -83,7 +83,7 @@ class RegisterViewController: UIViewController {
                                    subtitle: error.localizedDescription,
                                    style: BannerStyle.danger).show()
             case .errorResult(let entity):
-                NotificationBanner(title: "Warning",
+                NotificationBanner(title: "Error",
                                    subtitle: entity.error,
                                    style: BannerStyle.warning).show()
             }

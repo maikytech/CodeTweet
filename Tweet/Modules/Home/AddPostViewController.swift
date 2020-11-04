@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Simple_Networking
+import SVProgressHUD
+import NotificationBannerSwift
 
 class AddPostViewController: UIViewController {
     
@@ -16,7 +19,7 @@ class AddPostViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func addPostAction() {
         
-        
+        savePost()
     }
     
     @IBAction func dismissAction() {
@@ -28,6 +31,37 @@ class AddPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    // MARK: - Private Methods
+    private func savePost() {
         
+        //Do request
+        let request = PostRequest(text: postTextView.text, imageUrl: nil, videoUrl: nil, location: nil)
+        
+        //load indicator
+        SVProgressHUD.show()
+        
+        //Post services
+        SN.post(endpoint: EndPoints.post, model: request) { (response: SNResultWithEntity<Post, ErrorResponse>) in
+            
+            //dismiss load indicator
+            SVProgressHUD.dismiss()
+            
+            switch response {
+                
+            case .success:
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            case .error(let error):
+                
+                NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
+                
+            case .errorResult(let entity):
+                
+                NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
+            }
+        }
     }
 }

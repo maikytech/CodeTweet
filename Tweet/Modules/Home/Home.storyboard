@@ -24,7 +24,7 @@
                                 <rect key="frame" x="308" y="812" width="76" height="30"/>
                                 <state key="normal" title="New Tweet"/>
                                 <connections>
-                                    <segue destination="fva-TE-0CD" kind="presentation" id="drz-wC-cY6"/>
+                                    <segue destination="fva-TE-0CD" kind="presentation" modalPresentationStyle="fullScreen" id="drz-wC-cY6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,24 +71,24 @@
             <objects>
                 <viewController id="fva-TE-0CD" customClass="AddPostViewController" customModule="Tweet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDm-I1-EDq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Tweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-Od-hiz">
-                                <rect key="frame" x="20" y="20" width="374" height="43"/>
+                                <rect key="frame" x="20" y="64" width="374" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQY-Fz-hHr">
-                                <rect key="frame" x="360" y="26.5" width="34" height="30"/>
+                                <rect key="frame" x="360" y="70.5" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="dismissAction" destination="fva-TE-0CD" eventType="touchUpInside" id="Hch-82-qkM"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-Oz-xAy">
-                                <rect key="frame" x="20" y="73" width="384" height="187"/>
+                                <rect key="frame" x="20" y="117" width="384" height="187"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OlE-1s-FH7">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
@@ -118,7 +118,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="City" translatesAutoresizingMaskIntoConstraints="NO" id="NJo-cP-zpH">
-                                <rect key="frame" x="0.0" y="717" width="414" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="edg-2i-eqv"/>
                                 </constraints>
