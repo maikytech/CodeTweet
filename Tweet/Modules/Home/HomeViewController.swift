@@ -24,8 +24,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +35,7 @@ class HomeViewController: UIViewController {
     //MARK: - Private Methods
     private func setupUI() {
         
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
@@ -65,9 +64,56 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    //Delete tweet from server configuration
+    private func deletePostAt(indexPath: IndexPath) {
+        
+        //load indicator
+        SVProgressHUD.show()
+        
+        let postId = dataSource[indexPath.row].id
+        let endpoint = EndPoints.delete + postId
+        
+        //Service
+        SN.delete(endpoint: endpoint) { (response: SNResultWithEntity<GeneralResponse, ErrorResponse>) in
+            
+            SVProgressHUD.dismiss()
+            
+            switch response {
+            case .success:
+                
+                //Delete the post from server
+                self.dataSource.remove(at: indexPath.row)
+                
+                //Delete tableView post
+                self.tableView.deleteRows(at: [indexPath], with: .left)
+                
+            case .error(let error):
+                NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
+                
+            case .errorResult(let entity):
+                NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
+            
+            }
+        }
+    }
 }
 
-//MARK: - UITableViewDataSource
+// MARK: UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
+            
+            self.deletePostAt(indexPath: indexPath)
+        }
+        
+        return [deleteAction]
+    }
+}
+
+// MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
