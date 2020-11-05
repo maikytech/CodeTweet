@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1039770154824-vg2h6srqlmgth775f678d7jkaj2tg04k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1039770154824-vg2h6srqlmgth775f678d7jkaj2tg04k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMk88ys8mUzvReSo-kaKvlid8Z2n4a30E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1039770154824</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.PosetoStudio.Tweet</string>
+	<key>PROJECT_ID</key>
+	<string>codetweets-55afb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>codetweets-55afb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1039770154824:ios:871c863de5261bc9dae57d</string>
+	<key>DATABASE_URL</key>
+	<string>https://codetweets-55afb.firebaseio.com</string>
+</dict>
+</plist>

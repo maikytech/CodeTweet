@@ -20,6 +20,7 @@
 		652FB46D2540EA1B00EA2C1B /* PostLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FB46C2540EA1B00EA2C1B /* PostLocation.swift */; };
 		652FB46F2540EAC500EA2C1B /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FB46E2540EAC500EA2C1B /* EndPoints.swift */; };
 		653C8382255247CC00516516 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C8381255247CC00516516 /* AddPostViewController.swift */; };
+		656183BC25539DB900E3255E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 656183BB25539DB900E3255E /* GoogleService-Info.plist */; };
 		6562FF1A25339F6E00F22889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562FF1925339F6E00F22889 /* AppDelegate.swift */; };
 		6562FF1E25339F6E00F22889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562FF1D25339F6E00F22889 /* ViewController.swift */; };
 		6562FF2125339F6E00F22889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6562FF1F25339F6E00F22889 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		652FB46C2540EA1B00EA2C1B /* PostLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocation.swift; sourceTree = "<group>"; };
 		652FB46E2540EAC500EA2C1B /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		653C8381255247CC00516516 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		656183BB25539DB900E3255E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6562FF1625339F6E00F22889 /* Tweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6562FF1925339F6E00F22889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6562FF1D25339F6E00F22889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				65744162253923890095992F /* Commons */,
 				65744161253923770095992F /* Modules */,
 				6562FF2725339F6F00F22889 /* Info.plist */,
+				656183BB25539DB900E3255E /* GoogleService-Info.plist */,
 			);
 			path = Tweet;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				65744165253924AC0095992F /* Welcome.storyboard in Resources */,
 				6562FF2325339F6F00F22889 /* Assets.xcassets in Resources */,
 				6562FF2125339F6E00F22889 /* Main.storyboard in Resources */,
+				656183BC25539DB900E3255E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

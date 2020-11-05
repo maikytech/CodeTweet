@@ -40,6 +40,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
     
-    
+    <!-- Permission to use the camera -->
+    <key>NSCameraUsageDescription</key>
+    <string>We will use the camera to publish your tweet.</string>
+
 </dict>
 </plist>

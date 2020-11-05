@@ -15,18 +15,26 @@ class AddPostViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var previewImageView: UIImageView!
     
-    //MARK: - IBActions
+    // MARK: - IBActions
     @IBAction func addPostAction() {
         
         savePost()
     }
     
+    @IBAction func openCameraAction() {
+        
+        openCamera()
+        
+    }
     @IBAction func dismissAction() {
         
         dismiss(animated: true, completion: nil)
-        
     }
+    
+    // MARK: - Properties
+    private var imagePicker: UIImagePickerController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +42,24 @@ class AddPostViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    private func openCamera() {
+        
+        imagePicker = UIImagePickerController()
+        imagePicker?.sourceType = .camera
+        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraCaptureMode = .photo
+        imagePicker?.allowsEditing = true
+        imagePicker?.delegate = self
+        
+        guard let imagePicker = imagePicker else {
+            return
+        }
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+        
+    }
+    
     private func savePost() {
         
         //Do request
@@ -62,6 +88,25 @@ class AddPostViewController: UIViewController {
                 
                 NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
             }
+        }
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        //Close the camera
+        imagePicker?.dismiss(animated: true, completion: nil)
+        
+        //If we get a image...
+        if info.keys.contains(.originalImage) {
+            
+            previewImageView.isHidden = false
+            
+            //Get the image
+            previewImageView.image = info[.originalImage] as? UIImage
         }
     }
 }
