@@ -56,8 +56,6 @@ class AddPostViewController: UIViewController {
         }
         
         present(imagePicker, animated: true, completion: nil)
-        
-        
     }
     
     private func savePost() {
