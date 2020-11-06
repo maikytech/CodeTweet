@@ -43,6 +43,10 @@
     <!-- Permission to use the camera -->
     <key>NSCameraUsageDescription</key>
     <string>We will use the camera to publish your tweet.</string>
+    
+    <!-- Permission to use the microphone -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We will use the microphone to publish your tweet</string>
 
 </dict>
 </plist>

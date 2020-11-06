@@ -42,14 +42,14 @@ class LoginViewController: UIViewController {
     private func performLogin() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
-            
             NotificationBanner(title: "Error", subtitle: "Enter a valid email", style: BannerStyle.warning).show()
+            
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            
             NotificationBanner(title: "Error", subtitle: "Invalid pasword", style: BannerStyle.warning).show()
+            
             return
         }
         
