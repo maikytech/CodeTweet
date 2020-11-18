@@ -115,7 +115,7 @@
                                             <color key="titleColor" red="0.24131804524295658" green="0.87156486362690355" blue="0.15004956906614708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="openPreviewAction:" destination="fva-TE-0CD" eventType="touchUpInside" id="smS-ff-jTu"/>
+                                            <action selector="openPreviewAction" destination="fva-TE-0CD" eventType="touchUpInside" id="uIL-vE-msd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-AT-p9W">

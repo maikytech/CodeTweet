@@ -63,7 +63,7 @@ class RegisterViewController: UIViewController {
         //Do the request
         let request = RegisterRequest(email: email, password: password, names: names)
         
-        //Starts loading
+        //Show load Indicator
         SVProgressHUD.show()
         
         //Call the network library

@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         //do the request
         let request = LoginRequest(email: email, password: password)
         
-        //Starts loading
+        //Show load Indicator
         SVProgressHUD.show()
         
         // Sign in configuration

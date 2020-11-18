@@ -26,14 +26,32 @@ class AddPostViewController: UIViewController {
     @IBAction func addPostAction() {
         
         //uploadPhotoToFirebase()
-        openVideoCamera()
+        //openVideoCamera()
+        
+        uploadVideoToFirebase()
     }
     
     @IBAction func openCameraAction() {
         
-        openCamera()
+        let alert = UIAlertController(title: "Camera",
+                                      message: "Choose option",
+                                      preferredStyle: .actionSheet)
         
+        alert.addAction(UIAlertAction(title: "Photo", style: .default, handler: { _ in
+            
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Video", style: .default, handler: { _ in
+            
+            self.openVideoCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
+    
     @IBAction func dismissAction() {
         
         dismiss(animated: true, completion: nil)
@@ -41,18 +59,37 @@ class AddPostViewController: UIViewController {
     
     @IBAction func openPreviewAction() {
         
+        guard let currentVideoURL = currentVideoURL else {
+            return
+        }
         
+        //Capture video
+        let avPLayer = AVPlayer(url: currentVideoURL)
+        let avPlayerController = AVPlayerViewController()
+        avPlayerController.player = avPLayer
+        
+        present(avPlayerController, animated: true) {
+            
+            //Start the video automatically
+            avPlayerController.player?.play()
+        }
     }
+    
     // MARK: - Properties
     private var imagePicker: UIImagePickerController?
-    private var currentVideoUrl: URL?
-
+    private var currentVideoURL: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupUI()
     }
     
     // MARK: - Private Methods
+    private func setupUI() {
+        
+        videoButton.isHidden = true
+    }
     
     private func openVideoCamera() {
         
@@ -89,18 +126,63 @@ class AddPostViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    private func uploadVideoToFirebase() {
+        
+        guard
+            let currentVideoSavedURL = currentVideoURL,
+            let videoData: Data = try? Data(contentsOf: currentVideoSavedURL) else {
+            
+            return
+        }
+        
+        //Show load Indicator
+        SVProgressHUD.show()
+        
+        //Save video in Firebase
+        let metaDataConfig = StorageMetadata()
+        metaDataConfig.contentType = "video/MP4"
+        
+        let storage = Storage.storage()
+        let videoName = Int.random(in: 1001...10000)
+        let folderReference = storage.reference(withPath: "videos-tweets/\(videoName).mp4")
+        
+        //Secundary thread
+        DispatchQueue.global(qos: .background).async {
+            
+            folderReference.putData(videoData, metadata: metaDataConfig) { (metadata: StorageMetadata?, error: Error?) in
+                
+                //Main thread
+                DispatchQueue.main.async {
+                    
+                    //dismiss load indicator
+                    SVProgressHUD.dismiss()
+                    
+                    if let error = error {
+                        NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
+                    }
+                    
+                    folderReference.downloadURL { (url: URL?, error: Error?) in
+                        
+                        let downloadUrl = url?.absoluteString ?? ""
+                        self.savePost(imageUrl: nil, videoUrl: downloadUrl)
+                    }
+                }
+            }
+        }
+    }
+    
+    
     private func uploadPhotoToFirebase() {
         
         //Do we get a image?
         guard let imageSaved = previewImageView.image,
               let imageSavedData: Data = imageSaved.jpegData(compressionQuality: 0.1) else{
-               return
+            return
         }
         
         SVProgressHUD.show()
         
         //Save photo in Firebase
-        
         let metaDataConfig = StorageMetadata()
         metaDataConfig.contentType = "image/jpg"
         
@@ -124,9 +206,9 @@ class AddPostViewController: UIViewController {
                     }
                     
                     folderReferences.downloadURL { (url: URL?, error: Error?) in
-                     
+                        
                         let downloadUrl = url?.absoluteString ?? ""
-                        self.savePost(imageUrl: downloadUrl)
+                        self.savePost(imageUrl: downloadUrl, videoUrl: nil)
                     }
                     
                 }
@@ -134,7 +216,7 @@ class AddPostViewController: UIViewController {
         }
     }
     
-    private func savePost(imageUrl: String?) {
+    private func savePost(imageUrl: String?, videoUrl: String?) {
         
         //Do request
         let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: nil, location: nil)
@@ -149,7 +231,7 @@ class AddPostViewController: UIViewController {
             SVProgressHUD.dismiss()
             
             switch response {
-                
+            
             case .success:
                 
                 self.dismiss(animated: true, completion: nil)
@@ -183,18 +265,11 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             previewImageView.image = info[.originalImage] as? UIImage
         }
         
-        //Capture video
+        //if We have a video URL..
         if info.keys.contains(.mediaURL), let recordedVideoUrl = (info[.mediaURL] as? URL)?.absoluteURL {
             
-            let avPlayer = AVPlayer(url: recordedVideoUrl)
-            
-            let avPlayerController = AVPlayerViewController()
-            avPlayerController.player = avPlayer
-            
-            present(avPlayerController, animated: true) {
-                
-                avPlayerController.player?.play()   
-            }
+            videoButton.isHidden = false
+            currentVideoURL = recordedVideoUrl
         }
     }
 }
