@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vkh-Nr-kH4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vkh-Nr-kH4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,9 +19,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-6A-O9s">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljV-w9-y9H">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljV-w9-y9H">
                                 <rect key="frame" x="308" y="812" width="76" height="30"/>
                                 <state key="normal" title="New Tweet"/>
                                 <connections>
@@ -28,7 +29,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="l7k-8t-U0b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="l7k-8t-U0b" firstAttribute="bottom" secondItem="ljV-w9-y9H" secondAttribute="bottom" constant="20" id="9Fb-HQ-XbV"/>
                             <constraint firstItem="ZYE-6A-O9s" firstAttribute="leading" secondItem="l7k-8t-U0b" secondAttribute="leading" id="IoD-Wt-XBZ"/>
@@ -37,7 +39,6 @@
                             <constraint firstAttribute="bottom" secondItem="ZYE-6A-O9s" secondAttribute="bottom" id="mYh-aR-8b6"/>
                             <constraint firstItem="ljV-w9-y9H" firstAttribute="trailing" secondItem="l7k-8t-U0b" secondAttribute="trailing" constant="-30" id="npE-Fi-acv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="l7k-8t-U0b"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="nJ0-co-k2h"/>
                     <connections>
@@ -80,7 +81,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQY-Fz-hHr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQY-Fz-hHr">
                                 <rect key="frame" x="360" y="70.5" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -88,7 +89,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-Oz-xAy">
-                                <rect key="frame" x="20" y="117" width="384" height="237"/>
+                                <rect key="frame" x="20" y="117" width="384" height="279"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tweet whatever you want...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OlE-1s-FH7">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
@@ -96,20 +97,30 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="qZg-pM-PFX"/>
                                         </constraints>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLn-tX-g3v">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLn-tX-g3v">
                                         <rect key="frame" x="0.0" y="140" width="384" height="30"/>
                                         <state key="normal" title="Open the camera"/>
                                         <connections>
                                             <action selector="openCameraAction" destination="fva-TE-0CD" eventType="touchUpInside" id="qbL-Sj-Kxc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-AT-p9W">
-                                        <rect key="frame" x="0.0" y="190" width="384" height="47"/>
-                                        <color key="backgroundColor" red="0.33144511883388306" green="0.94120318847157358" blue="0.58555259949791216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K55-XL-ZKY">
+                                        <rect key="frame" x="0.0" y="190" width="384" height="22"/>
+                                        <color key="tintColor" red="0.24131804524295658" green="0.87156486362690355" blue="0.15004956906614708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Video" image="video.fill" catalog="system">
+                                            <color key="titleColor" red="0.24131804524295658" green="0.87156486362690355" blue="0.15004956906614708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openPreviewAction:" destination="fva-TE-0CD" eventType="touchUpInside" id="smS-ff-jTu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-AT-p9W">
+                                        <rect key="frame" x="0.0" y="232" width="384" height="47"/>
+                                        <color key="backgroundColor" red="0.2413180452" green="0.87156486359999996" blue="0.1500495691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="ldv-UA-ZTy"/>
                                         </constraints>
@@ -122,7 +133,7 @@
                                         </connections>
                                     </button>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-fs-yP4">
-                                        <rect key="frame" x="0.0" y="237" width="384" height="200"/>
+                                        <rect key="frame" x="0.0" y="279" width="384" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="ZyO-Jv-TnS"/>
                                         </constraints>
@@ -136,7 +147,8 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ZNN-14-PAM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZNN-14-PAM" firstAttribute="trailing" secondItem="KqD-Oz-xAy" secondAttribute="trailing" constant="10" id="7bN-YI-FIs"/>
                             <constraint firstItem="KqD-Oz-xAy" firstAttribute="leading" secondItem="ZNN-14-PAM" secondAttribute="leading" constant="20" id="EMz-mp-nZF"/>
@@ -150,11 +162,11 @@
                             <constraint firstItem="NJo-cP-zpH" firstAttribute="trailing" secondItem="ZNN-14-PAM" secondAttribute="trailing" id="YO3-jm-96z"/>
                             <constraint firstItem="fQY-Fz-hHr" firstAttribute="centerY" secondItem="Amg-Od-hiz" secondAttribute="centerY" id="o35-tf-MQu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZNN-14-PAM"/>
                     </view>
                     <connections>
                         <outlet property="postTextView" destination="OlE-1s-FH7" id="khM-vx-PDj"/>
                         <outlet property="previewImageView" destination="vOt-fs-yP4" id="hNR-HE-8CZ"/>
+                        <outlet property="videoButton" destination="K55-XL-ZKY" id="raX-BA-hQM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtF-ue-0Jj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,5 +176,12 @@
     </scenes>
     <resources>
         <image name="City" width="351.5" height="123"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

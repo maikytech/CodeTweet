@@ -20,6 +20,7 @@ class AddPostViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var videoButton: UIButton!
     
     // MARK: - IBActions
     @IBAction func addPostAction() {
@@ -38,6 +39,10 @@ class AddPostViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func openPreviewAction() {
+        
+        
+    }
     // MARK: - Properties
     private var imagePicker: UIImagePickerController?
     private var currentVideoUrl: URL?
@@ -169,7 +174,7 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         //Close the camera
         imagePicker?.dismiss(animated: true, completion: nil)
         
-        //If we get a image...
+        //If we have an image...
         if info.keys.contains(.originalImage) {
             
             previewImageView.isHidden = false
@@ -188,7 +193,7 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             
             present(avPlayerController, animated: true) {
                 
-                avPlayerController.player?.play()
+                avPlayerController.player?.play()   
             }
         }
     }
