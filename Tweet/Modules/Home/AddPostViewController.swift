@@ -219,7 +219,7 @@ class AddPostViewController: UIViewController {
     private func savePost(imageUrl: String?, videoUrl: String?) {
         
         //Do request
-        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: nil, location: nil)
+        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: videoUrl, location: nil)
         
         //load indicator
         SVProgressHUD.show()

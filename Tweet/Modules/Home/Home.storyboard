@@ -116,6 +116,7 @@
                                         </state>
                                         <connections>
                                             <action selector="openPreviewAction" destination="fva-TE-0CD" eventType="touchUpInside" id="uIL-vE-msd"/>
+                                            <action selector="openVideoAction" destination="bx2-5o-EfO" eventType="touchUpInside" id="u2M-NR-FEr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-AT-p9W">
@@ -170,6 +171,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtF-ue-0Jj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bx2-5o-EfO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1715.9420289855075" y="609.375"/>
         </scene>

@@ -10,6 +10,7 @@ import UIKit
 import Simple_Networking
 import SVProgressHUD
 import NotificationBannerSwift
+import AVKit
 
 class HomeViewController: UIViewController {
     
@@ -128,6 +129,19 @@ extension HomeViewController: UITableViewDataSource {
             
             //Cell configuration
             cell.setupCellWith(post: dataSource[indexPath.row])
+            cell.needsToShowVideo = { url in
+                
+                //Capture video
+                let avPLayer = AVPlayer(url: url)
+                let avPlayerController = AVPlayerViewController()
+                avPlayerController.player = avPLayer
+                
+                self.present(avPlayerController, animated: true) {
+                    
+                    //Start the video automatically
+                    avPlayerController.player?.play()
+                }
+            }
         }
         return cell
     }
