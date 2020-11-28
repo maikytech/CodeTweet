@@ -14,6 +14,7 @@ import FirebaseStorage
 import AVFoundation
 import AVKit
 import MobileCoreServices
+import CoreLocation
 
 class AddPostViewController: UIViewController {
     
@@ -78,11 +79,14 @@ class AddPostViewController: UIViewController {
     // MARK: - Properties
     private var imagePicker: UIImagePickerController?
     private var currentVideoURL: URL?
+    private var locationManager: CLLocationManager?
+    private var userLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        requestLocation()
     }
     
     // MARK: - Private Methods
@@ -246,6 +250,21 @@ class AddPostViewController: UIViewController {
             }
         }
     }
+    
+    private func requestLocation() {
+        
+        //Are location services enable?
+        guard CLLocationManager.locationServicesEnabled() else {
+            return
+        }
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+        
+    }
 }
 
 // MARK: - UIImagePickerControllerDelegate
@@ -271,5 +290,19 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             videoButton.isHidden = false
             currentVideoURL = recordedVideoUrl
         }
+    }
+}
+
+//MARK: - CLLocationManagerDelegate
+extension AddPostViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        //Get the last user location
+        guard let bestLocation = locations.last else {
+            return
+        }
+        
+        userLocation = bestLocation
     }
 }

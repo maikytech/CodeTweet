@@ -47,6 +47,13 @@
     <!-- Permission to use the microphone -->
     <key>NSMicrophoneUsageDescription</key>
     <string>We will use the microphone to publish your tweet</string>
+    
+    <!-- Permission to use the GPS -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We will use the GPS to publish your tweet</string>
+    
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We will use the GPS to publish your tweet</string>
 
 </dict>
 </plist>
