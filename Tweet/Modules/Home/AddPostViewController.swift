@@ -29,7 +29,8 @@ class AddPostViewController: UIViewController {
         //uploadPhotoToFirebase()
         //openVideoCamera()
         
-        uploadVideoToFirebase()
+        //uploadVideoToFirebase()
+        savePost(imageUrl: nil, videoUrl: nil)
     }
     
     @IBAction func openCameraAction() {
