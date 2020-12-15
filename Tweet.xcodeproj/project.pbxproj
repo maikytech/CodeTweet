@@ -30,6 +30,7 @@
 		65747044253A50DF002DA4E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65747043253A50DF002DA4E5 /* LoginViewController.swift */; };
 		65747046253A65F9002DA4E5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65747045253A65F9002DA4E5 /* RegisterViewController.swift */; };
 		6598A0FB2588529100825248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6598A0FA2588529100825248 /* GoogleService-Info.plist */; };
+		659AF62D25885F9E00D3FB2D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AF62C25885F9E00D3FB2D /* MapViewController.swift */; };
 		65DF056A254A6D9100E072D8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF0569254A6D9100E072D8 /* HomeViewController.swift */; };
 		65DF056E254A71D100E072D8 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF056C254A71D100E072D8 /* TweetTableViewCell.swift */; };
 		65DF056F254A71D100E072D8 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DF056D254A71D100E072D8 /* TweetTableViewCell.xib */; };
@@ -63,6 +64,7 @@
 		65747043253A50DF002DA4E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		65747045253A65F9002DA4E5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6598A0FA2588529100825248 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		659AF62C25885F9E00D3FB2D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		65DF0569254A6D9100E072D8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		65DF056C254A71D100E072D8 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		65DF056D254A71D100E072D8 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				650DF6F5253DEE920055E543 /* Home.storyboard */,
 				65DF0569254A6D9100E072D8 /* HomeViewController.swift */,
 				653C8381255247CC00516516 /* AddPostViewController.swift */,
+				659AF62C25885F9E00D3FB2D /* MapViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				652FB4692540E8D500EA2C1B /* User.swift in Sources */,
 				65747044253A50DF002DA4E5 /* LoginViewController.swift in Sources */,
 				652FB4652540E7D600EA2C1B /* PostRequestLocation.swift in Sources */,
+				659AF62D25885F9E00D3FB2D /* MapViewController.swift in Sources */,
 				653C8382255247CC00516516 /* AddPostViewController.swift in Sources */,
 				65DF056A254A6D9100E072D8 /* HomeViewController.swift in Sources */,
 				652FB45B2540E44200EA2C1B /* LoginResponse.swift in Sources */,
