@@ -31,7 +31,8 @@ NotificationBanner is an extremely customizable and lightweight library that mak
 - Presenting from top or bottom support ✅
 - Haptic feeback support ✅
 - Built in banner queue ✅
-- Allow to display several banners simultaneously, configurable in banners queue
+- Allow to display several banners simultaneously, configurable in banners queue ✅
+- Accessibility support ✅
 
 ## Requirements
 
@@ -45,13 +46,13 @@ NotificationBanner is an extremely customizable and lightweight library that mak
 NotificationBanner is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-#### Swift 5 + xCode 11 + iOS 13 Support
+#### Swift 5 + Xcode 11 + iOS 13 Support
 
 ```ruby
 pod 'NotificationBannerSwift', '~> 3.0.0'
 ```
 
-#### Swift 5 + xCode 10.x
+#### Swift 5 + Xcode 10.x
 
 ```ruby
 pod 'NotificationBannerSwift', '2.5.0'
