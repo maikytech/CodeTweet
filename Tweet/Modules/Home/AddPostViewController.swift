@@ -39,7 +39,7 @@ class AddPostViewController: UIViewController {
             
             return
         }
-        
+            
         //openVideoCamera()
     
         savePost(imageUrl: nil, videoUrl: nil)
@@ -235,8 +235,20 @@ class AddPostViewController: UIViewController {
     
     private func savePost(imageUrl: String?, videoUrl: String?) {
         
+        //Location Request
+        var postLocation: PostRequestLocation?
+        
+        if let userLocation = userLocation {
+            
+            postLocation = PostRequestLocation(latitude: userLocation.coordinate.latitude,
+                                               longitud: userLocation.coordinate.longitude)
+        }
+        
         //Do request
-        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: videoUrl, location: nil)
+        let request = PostRequest(text: postTextView.text,
+                                  imageUrl: imageUrl,
+                                  videoUrl: videoUrl,
+                                  location: nil)
         
         //load indicator
         SVProgressHUD.show()

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1039770154824-vg2h6srqlmgth775f678d7jkaj2tg04k.apps.googleusercontent.com</string>
+	<string>906950664146-mld3jrej0d4vhr6pttah4i9f83qs58an.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1039770154824-vg2h6srqlmgth775f678d7jkaj2tg04k</string>
+	<string>com.googleusercontent.apps.906950664146-mld3jrej0d4vhr6pttah4i9f83qs58an</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCMk88ys8mUzvReSo-kaKvlid8Z2n4a30E</string>
+	<string>AIzaSyB2VGl_31j723lAAX8CkqcKLepmuVyla0s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1039770154824</string>
+	<string>906950664146</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.PosetoStudio.Tweet</string>
 	<key>PROJECT_ID</key>
-	<string>codetweets-55afb</string>
+	<string>tweet-78463</string>
 	<key>STORAGE_BUCKET</key>
-	<string>codetweets-55afb.appspot.com</string>
+	<string>tweet-78463.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1039770154824:ios:871c863de5261bc9dae57d</string>
-	<key>DATABASE_URL</key>
-	<string>https://codetweets-55afb.firebaseio.com</string>
+	<string>1:906950664146:ios:7994b8ceac74ad37dcf20b</string>
 </dict>
 </plist>
