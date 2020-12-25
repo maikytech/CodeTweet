@@ -248,13 +248,14 @@ class AddPostViewController: UIViewController {
         let request = PostRequest(text: postTextView.text,
                                   imageUrl: imageUrl,
                                   videoUrl: videoUrl,
-                                  location: nil)
+                                  location: postLocation)
         
         //load indicator
         SVProgressHUD.show()
         
         //Post services
-        SN.post(endpoint: EndPoints.post, model: request) { (response: SNResultWithEntity<Post, ErrorResponse>) in
+        SN.post(endpoint: EndPoints.post,
+                model: request) { (response: SNResultWithEntity<Post, ErrorResponse>) in
             
             //dismiss load indicator
             SVProgressHUD.dismiss()
