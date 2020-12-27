@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>906950664146-mld3jrej0d4vhr6pttah4i9f83qs58an.apps.googleusercontent.com</string>
+	<string>24590942514-ndr09qccg1qiprooebruulm7lgnjirai.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.906950664146-mld3jrej0d4vhr6pttah4i9f83qs58an</string>
+	<string>com.googleusercontent.apps.24590942514-ndr09qccg1qiprooebruulm7lgnjirai</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB2VGl_31j723lAAX8CkqcKLepmuVyla0s</string>
+	<string>AIzaSyDc1OMz50h1Yqg9BxDdl7Ti8YLokdBXSL8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>906950664146</string>
+	<string>24590942514</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.PosetoStudio.Tweet</string>
+	<string>com.posetostudio.Tweet</string>
 	<key>PROJECT_ID</key>
-	<string>tweet-78463</string>
+	<string>codetweet-912da</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tweet-78463.appspot.com</string>
+	<string>codetweet-912da.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:906950664146:ios:7994b8ceac74ad37dcf20b</string>
+	<string>1:24590942514:ios:3bbc4d6877cfa3deb7172b</string>
 </dict>
 </plist>

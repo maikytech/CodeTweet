@@ -218,7 +218,9 @@ class AddPostViewController: UIViewController {
                     SVProgressHUD.dismiss()
                     
                     if let error = error {
-                        NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
+                        NotificationBanner(title: "Error",
+                                           subtitle: error.localizedDescription,
+                                           style: .danger).show()
                         return
                     }
                     
@@ -268,11 +270,15 @@ class AddPostViewController: UIViewController {
                 
             case .error(let error):
                 
-                NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
+                NotificationBanner(title: "Error",
+                                   subtitle: error.localizedDescription,
+                                   style: .danger).show()
                 
             case .errorResult(let entity):
                 
-                NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
+                NotificationBanner(title: "Error",
+                                   subtitle: entity.error,
+                                   style: .warning).show()
             }
         }
     }
@@ -289,7 +295,6 @@ class AddPostViewController: UIViewController {
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
-        
     }
 }
 
